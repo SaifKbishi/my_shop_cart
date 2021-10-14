@@ -11,3 +11,10 @@ export const removeItem = itemName =>(
     payload: itemName //data we are sending
   }
 );
+
+export const clearCart =()=> (
+  {
+    type: 'CLEAR_CART',
+    // payload: cart
+  }
+)

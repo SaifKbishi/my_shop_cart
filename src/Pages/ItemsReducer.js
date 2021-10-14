@@ -13,7 +13,6 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
   switch (action.type) {
     case 'ADD_ITEM':
     const addedItem = state.allItems.find(item => item === action.payload);
-    // console.log('36: ',addedItem)
     if(addedItem){
       return{        
           ...state,
@@ -21,7 +20,7 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
         }
         break;
       }else{
-        return state,
+        return state
         console.log('no such item')
         break;
       }
@@ -36,7 +35,15 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
       break;
     }
     break;
+    
+    case 'CLEAR_CART':
+    return {
+      ...state,
+      cart: []
+    }    
+    break;
 
+/**** */
     default:
       return state;
       break;
