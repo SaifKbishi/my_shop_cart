@@ -12,7 +12,6 @@ const INITIAL_STATE = {
 const itemsReducer = (state=INITIAL_STATE, action)=>{
   switch (action.type) {
     case 'ADD_ITEM':
-    // const addedItem = state.allItems.find(item.name => item.name === action.payload);
     const addedItem = state.allItems.find(item => item === action.payload);
     if(addedItem){
       return{        

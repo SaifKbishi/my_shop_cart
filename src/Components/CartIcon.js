@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Typography, Button} from '@mui/material/';
+import { Typography} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Typography} from '@mui/material/';
+// import {Typography} from '@mui/material/';
 import ItemsScreen from './ItemsScreen';
 import CartScreen from './CartScreen';
 import CartIcon from './CartIcon';
