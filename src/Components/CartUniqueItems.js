@@ -11,7 +11,7 @@ const CartUniqueItems = (props) => {
   let unique = props.items.cart.filter(uniqueItems);
   return (
     <Typography className={classes.speComponent}>
-      Total Unique in the Cart: {unique.length}
+      Total Unique items in the Cart: {unique.length}
     </Typography>
   );
 };

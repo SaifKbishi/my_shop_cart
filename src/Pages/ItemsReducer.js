@@ -7,8 +7,9 @@ const INITIAL_STATE = {
     // 'Alice', 'Bob', 'Sammy', 'Olivia', 
     // 'Emma', 'Ava', 'Charlotte', 'Sophia',
     // 'Amelia', 'Isabella', 'Mia', 'Evelyn', 'Harper', 'Liam	', 'Noah	', 'Oliver	',
-    // 'Elijah	', 'William	', 'James	', 'Benjamin', 'Lucas	', 'Henry	', 'Alexander',
+    // 'Elijah	', 'William	', 'James	', 'Benjamin', 'Lucas	', 'Henry	', 'Alexander',    
   ],
+  totalPrice:0
 }
 
 const itemsReducer = (state=INITIAL_STATE, action)=>{
@@ -21,13 +22,15 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
       return{        //should update the counter
           ...state,
           cart: state.cart.map(item => item.name === inCartItem.name ? {...inCartItem, quantity:inCartItem.quantity +1} : item),
+          totalPrice: state.totalPrice + action.payload.price,
         }        
         break;
       }
       else{
         return {        
           ...state,
-          cart:[...state.cart, addedItem]
+          cart:[...state.cart, addedItem],
+          totalPrice: state.totalPrice + action.payload.price,
         }        
         break;
       }
@@ -39,12 +42,14 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
       return{
         ...state,
         cart: state.cart.map(item => item.name === removedItem.name ? {...removedItem, quantity: removedItem.quantity -1} : item),
+        totalPrice: state.totalPrice - action.payload.price,
       }
       break;
-    }else if(removedItem && removedItem.quantity ===0){
+    }else if(removedItem && removedItem.quantity === 0){
       return{
       ...state,
-      cart: state.cart.filter(cartItem => cartItem !== removedItem)
+      cart: state.cart.filter(cartItem => cartItem !== removedItem),
+      totalPrice: state.totalPrice - action.payload.price,
       }
     }
     else{
@@ -59,13 +64,14 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
     case 'CLEAR_CART':
     return {
       ...state,
-      cart: []
+      cart: [],
+      totalPrice:0
     }    
     break;
 
     // case 'IN_CART':
     // const findItem = state.cart.find(item => item === action.payload)
-console.log(state.cart)
+console.log('68: ',state.cart)
 /**** */
     default:
       return state;

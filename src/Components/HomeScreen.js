@@ -12,9 +12,9 @@ const HomeScreen = (props) => {
   const classes = useStyles();
   return (
     <div>
-      {/* <CartIcon/> */}
-      {/* <CartUniqueItems/> */}
-      {/* <ClearCart/> */}
+      <CartIcon/>
+      <CartUniqueItems/>
+      <ClearCart/>
       <div className={classes.itemsAndCart}>        
         <ItemsScreen/>        
         <CartScreen/>
