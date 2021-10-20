@@ -18,3 +18,10 @@ export const clearCart =()=> (
     // payload: cart
   }
 )
+
+// export const inCart =(itemName)=>(
+//   {
+//     type: 'IN_CART',
+//     payload: itemName
+//   }
+// )

@@ -8,10 +8,10 @@ const CartScreen = (props) => {
   return (
     <div className={classes.speComponent}>
     <Typography variant="h4" gutterBottom>Items in the Cart</Typography>      
-      {props.items.cart.map((item, index)=>{
+      {props.items.cart.map((item, index)=>{        
         return(
           <div className={classes.itemsInCart} key={index}>
-          <Typography variant="h6" >{item}</Typography>
+          <Typography variant="h6" >{item.name} qty:{item.quantity}</Typography>
           </div>
         )
       })

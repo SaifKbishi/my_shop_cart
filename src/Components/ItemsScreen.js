@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addItem} from '../Pages/ItemsActions'
+import { addItem, removeItem} from '../Pages/ItemsActions'
 import { Typography, Button, ButtonGroup} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -11,19 +11,19 @@ const ItemsScreen = (props) => {
     <div className={classes.speComponent}>
     <Typography variant="h4" gutterBottom>Items you can add to Cart</Typography>
         <Typography variant="h6" gutterBottom>number of item can be added: {props.items.allItems.length}</Typography>
-      {props.items.allItems.map((item, index)=>{        
+      {props.items.allItems.map((item, index)=>{
         return(
           <div className={classes.anItem} key={index}>
           
             <div >
             <Button key={index} style={{backgroundColor:'#333', margin:'3px'}} 
               onClick={()=>{props.addItem(item)}}
-              >Add {item}</Button>
+              >Add {item.name}</Button>
             </div>
 
             <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>
             <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
-              onClick={()=>{console.log('--')}}
+              onClick={()=>{props.removeItem(item)}}
               key={index+item}
               >-</Button>
             <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
@@ -45,7 +45,7 @@ const mapStateToProps = (state)=>{
 };
 
 const mapDispatchToProps = (dispatch) =>(
-   bindActionCreators({addItem, 
+   bindActionCreators({addItem, removeItem
    }, dispatch)
 )
 
