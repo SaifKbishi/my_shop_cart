@@ -21,7 +21,7 @@ const ItemsScreen = (props) => {
               >Add {item.name}</Button>
             </div>
 
-            <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>
+            <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>            
             <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
               onClick={()=>{props.removeItem(item)}}
               key={index+item}

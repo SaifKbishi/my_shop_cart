@@ -3,7 +3,7 @@ import {combineReducers} from 'redux';
 const INITIAL_STATE = {
   cart : [],
   allItems : [
-    {id:1, name:'Alice', price:25, quantity:1}, {id:2, name:'Bob',price:26, quantity:1}, {id:3, name:'Sammy',price:28, quantity:1}, {id:4, name:'Olivia',price:30, quantity:1}, 
+    {id:1, name:'Alice', price:25, quantity:1}, {id:2, name:'Bob',price:20, quantity:1}, {id:3, name:'Sammy',price:30, quantity:1}, {id:4, name:'Olivia',price:50, quantity:1}, 
     // 'Alice', 'Bob', 'Sammy', 'Olivia', 
     // 'Emma', 'Ava', 'Charlotte', 'Sophia',
     // 'Amelia', 'Isabella', 'Mia', 'Evelyn', 'Harper', 'Liam	', 'Noah	', 'Oliver	',
@@ -38,18 +38,27 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
 
     case 'REMOVE_ITEM':
     const removedItem = state.cart.find(item => item.name === action.payload.name);
-    if(removedItem && removedItem.quantity>0){
+    if(removedItem && removedItem.quantity>1){
       return{
         ...state,
         cart: state.cart.map(item => item.name === removedItem.name ? {...removedItem, quantity: removedItem.quantity -1} : item),
         totalPrice: state.totalPrice - action.payload.price,
       }
       break;
-    }else if(removedItem && removedItem.quantity === 0){
+    }else if(removedItem && removedItem.quantity === 1){
+      console.log('49: ', removedItem)
       return{
-      ...state,
-      cart: state.cart.filter(cartItem => cartItem !== removedItem),
-      totalPrice: state.totalPrice - action.payload.price,
+        ...state,
+        cart: state.cart.filter(cartItem => cartItem.name !== removedItem.name),
+        totalPrice: state.totalPrice - action.payload.price,
+      }
+    }
+    else if(removedItem && removedItem.quantity === 0){
+      console.log('49: ', removedItem)
+      return{
+        ...state,
+        cart: state.cart.filter(cartItem => cartItem.name !== removedItem.name),
+        totalPrice: state.totalPrice,
       }
     }
     else{
