@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   cart : [],
   allItems : [
     {id:1, name:'Alice', price:25, quantity:1}, {id:2, name:'Bob',price:20, quantity:1}, {id:3, name:'Sammy',price:30, quantity:1}, {id:4, name:'Olivia',price:50, quantity:1}, 
-    // 'Alice', 'Bob', 'Sammy', 'Olivia', 
+    {id:1, name:'Emma', price:25, quantity:1}, {id:2, name:'Ava',price:20, quantity:1}, {id:3, name:'Charlotte',price:30, quantity:1}, {id:4, name:'Liam',price:50, quantity:1}, 
+    
     // 'Emma', 'Ava', 'Charlotte', 'Sophia',
     // 'Amelia', 'Isabella', 'Mia', 'Evelyn', 'Harper', 'Liam	', 'Noah	', 'Oliver	',
     // 'Elijah	', 'William	', 'James	', 'Benjamin', 'Lucas	', 'Henry	', 'Alexander',    

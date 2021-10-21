@@ -11,7 +11,7 @@ import ClearCart from './ClearCart'
 const HomeScreen = (props) => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.HomeScreenDiv}>
       <CartIcon/>
       <CartUniqueItems/>
       <ClearCart/>
@@ -31,8 +31,11 @@ const mapStateToProps = (state)=>{
 const useStyles = makeStyles({  
   itemsAndCart:{
     display:'flex',
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
+  HomeScreenDiv:{
+    width: '100%',
+  }
 });
 
 export default connect(mapStateToProps)(HomeScreen);
