@@ -1,24 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import {Typography} from '@mui/material/';
+import NavBar from './NavBar'
 import ItemsScreen from './ItemsScreen';
 import CartScreen from './CartScreen';
 import CartIcon from './CartIcon';
 import CartUniqueItems from './CartUniqueItems';
 import { makeStyles } from '@material-ui/core/styles';
-import ClearCart from './ClearCart'
+import ClearCart from './ClearCart';
+
 
 const HomeScreen = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.HomeScreenDiv}>
+    <Router>
+      <NavBar/>
       <CartIcon/>
       <CartUniqueItems/>
       <ClearCart/>
-      <div className={classes.itemsAndCart}>        
+      <Route path="/" exact component={ItemsScreen} />      
+      <Route path="/allitems" component={ItemsScreen} />
+      <Route path="/cart" component={CartScreen} />
+
+      {/* <div className={classes.itemsAndCart}>        
         <ItemsScreen/>        
         <CartScreen/>
-      </div>
+      </div> */}
+    </Router>
     </div>
   );
 };
