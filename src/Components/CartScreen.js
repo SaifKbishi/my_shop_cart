@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Typography} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
+import ClearCart from './ClearCart';
 
 const CartScreen = (props) => {
   const classes = useStyles();
@@ -16,6 +17,8 @@ const CartScreen = (props) => {
         )
       })
       }
+      
+      <ClearCart/>
     </div>
   );
 };

@@ -64,7 +64,7 @@ const useStyles = makeStyles({
   },
   anItem:{
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     margin: '0px 5px',
     padding: '10px',

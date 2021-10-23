@@ -16,13 +16,15 @@ import Switch from '@mui/material/Switch';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link,useHistory  } from "react-router-dom";
 
 
-export default function NavBar() {
+const NavBar = (props)=> {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const history = useHistory();
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -36,6 +38,7 @@ export default function NavBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -64,11 +67,19 @@ export default function NavBar() {
             // onClick={handleMenu}
             color="inherit"
           >
-            <ShoppingCartRoundedIcon className={classes.cartIcon}>
-              <CartIcon>555
-              </CartIcon>
-              <Typography>5</Typography>
-            </ShoppingCartRoundedIcon>               
+         <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={()=>history.push('/cart')}
+            color="inherit"
+          >
+          <ShoppingCartRoundedIcon/>
+          <CartIcon className={classes.itemInCart}/>
+        </IconButton>
+
+            
           </IconButton>
           {auth && (
             <div>
@@ -112,8 +123,23 @@ const useStyles = makeStyles({
   menuLink:{
     padding: '0 10px',
     textDecoration: 'none',
+    color: '#FFF',
   },
   cartIcon:{
     // padding: '0 10px',
   },
+  itemInCart:{
+    color: '#333',
+    fontSize: '7px',
+    position: 'relative',
+    top: '-14px',
+    left:'19px'
+  }
 });
+
+const mapStateToProps = (state)=>{
+  const {items} = state
+  return {items}
+};
+
+export default connect(mapStateToProps)(NavBar);

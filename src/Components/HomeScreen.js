@@ -8,7 +8,7 @@ import CartScreen from './CartScreen';
 import CartIcon from './CartIcon';
 import CartUniqueItems from './CartUniqueItems';
 import { makeStyles } from '@material-ui/core/styles';
-import ClearCart from './ClearCart';
+
 
 
 const HomeScreen = (props) => {
@@ -17,9 +17,8 @@ const HomeScreen = (props) => {
     <div className={classes.HomeScreenDiv}>
     <Router>
       <NavBar/>
-      <CartIcon/>
+      {/* <CartIcon/> */}
       <CartUniqueItems/>
-      <ClearCart/>
       <Route path="/" exact component={ItemsScreen} />      
       <Route path="/allitems" component={ItemsScreen} />
       <Route path="/cart" component={CartScreen} />

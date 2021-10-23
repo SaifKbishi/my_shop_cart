@@ -9,22 +9,20 @@ const CartIcon = (props) => {
   const classes = useStyles();
  
   return (
-    <div className={classes.speComponent}>
-    CartIcon
+    // <div className={classes.speComponent}>
+    <div >
       <Typography >
-        Total items in the Cart: 
+        {/* Total items in the Cart:  */}
         {props.items.cart.reduce((a, item)=>{
           return a + item.quantity
         },0)}
       </Typography>      
-      <Typography>
+      {/* <Typography>
         Total Price: {props.items.totalPrice} $
-      </Typography>
+      </Typography> */}
     </div>
   );
 };
-
-
 
 const mapStateToProps = (state)=>{
   const {items} = state
@@ -33,7 +31,7 @@ const mapStateToProps = (state)=>{
 
 const useStyles = makeStyles({  
   speComponent:{
-    border: `2px solid red`,
+    // border: `2px solid red`,
     margin: '5px 10px',
   }
 });

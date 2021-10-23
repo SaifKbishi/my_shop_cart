@@ -51,7 +51,7 @@ export default function ItemCard({title}) {
         component="img"
         height="120"
         image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        alt={title} 
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
