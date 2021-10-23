@@ -11,7 +11,7 @@ const ClearCart = (props) => {
     <div>
       <Button variant="contained" color="error" style={{ margin:'3px 0px'}} 
         onClick={()=>{props.clearCart(); }}        
-      >Clear Cart</Button>
+      >Delete all items from Cart</Button>
     </div>
   );
 };

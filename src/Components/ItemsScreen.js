@@ -21,17 +21,19 @@ const ItemsScreen = (props) => {
             </div> */}
 
             <ItemCard title={item.name} img={item.img}/>
-
-            <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>            
-            <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
-              onClick={()=>{props.removeItem(item)}}
-              key={index+item}
-              >-</Button>
-            <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
-              onClick={()=>{props.addItem(item)}}
-              key={index+item+item}
-              >+</Button>            
-            </ButtonGroup>
+            <div className={classes.qtyBtns}>
+              <Typography variant="p" display="inline">Price: {item.price} $</Typography> 
+              <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>            
+              <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
+                onClick={()=>{props.removeItem(item)}}
+                key={index+item}
+                >-</Button>
+              <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
+                onClick={()=>{props.addItem(item)}}
+                key={index+item+item}
+                >+</Button>            
+              </ButtonGroup>
+            </div>
           </div>
         )
       })}
@@ -66,6 +68,10 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     margin: '0px 5px',
     padding: '10px',
+  },
+  qtyBtns:{
+    display:'flex',
+    justifyContent:'space-around'
   }
 });
 

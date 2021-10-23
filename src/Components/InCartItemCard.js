@@ -5,30 +5,36 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-export default function InCartItemCard({title, img}) {
+const InCartItemCard = ({title, img}) => {
+const classes = useStyles();
 
   return (
-    <Card sx={{ maxWidth: 345, minHeight: 320 }}>
+    <Card sx={{ maxWidth: 890, minHeight: 170 }} className={classes.basketCard}>
       <CardMedia
         component="img"
-        height="120"
+        height="120"        
         image={img}
         alt={title}        
-        sx={{objectFit: 'contain'}}
+        sx={{objectFit: 'contain', maxWidth:'200px'}}
       />
       <CardHeader  
         title={title}
-        sx={{fontSize : '1.1rem', height: '70px'}}
+        sx={{fontSize : '1.1rem', height: '70px', width:'750px'}}
       />
-      
-      {/* <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
-      </CardContent>   */}
     </Card>
   );
 }
+
+const useStyles = makeStyles({
+  basketCard:{
+    display:'flex',
+    padding: '10px',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+});
+
+
+export default InCartItemCard;
