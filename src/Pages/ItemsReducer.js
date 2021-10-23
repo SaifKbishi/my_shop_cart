@@ -90,7 +90,7 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
 
     // case 'IN_CART':
     // const findItem = state.cart.find(item => item === action.payload)
-console.log('68: ',state.cart)
+
 /**** */
     default:
       return state;
