@@ -10,8 +10,6 @@ const ItemsScreen = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.speComponent}>
-    {/* <Typography variant="h4" gutterBottom>Items you can add to Cart</Typography>
-    <Typography variant="h6" gutterBottom>number of item can be added: {props.items.allItems.length}</Typography> */}
       {props.items.allItems.map((item, index)=>{
         return(
           <div className={classes.anItem} key={index}>
@@ -22,7 +20,7 @@ const ItemsScreen = (props) => {
               >Add {item.name}</Button>
             </div> */}
 
-            <ItemCard title={item.name}/>
+            <ItemCard title={item.name} img={item.img}/>
 
             <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>            
             <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
@@ -54,7 +52,7 @@ const mapDispatchToProps = (dispatch) =>(
 
 const useStyles = makeStyles({  
   speComponent:{
-    border: `2px solid red`,
+    // border: `2px solid red`,
     margin: '5px 10px',
     // width: '450px',
     display: 'flex',

@@ -21,7 +21,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function ItemCard({title}) {
+export default function ItemCard({title, img}) {
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -31,7 +31,7 @@ export default function ItemCard({title}) {
   };
 
   return (
-    <Card sx={{ maxWidth: 180 }} className={classes.card} >
+    <Card sx={{ maxWidth: 285, minHeight: 320 }} className={classes.card} >
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -50,8 +50,9 @@ export default function ItemCard({title}) {
       <CardMedia
         component="img"
         height="120"
-        image="/static/images/cards/paella.jpg"
+        image={img}
         alt={title} 
+        className={classes.image} 
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -91,6 +92,10 @@ export default function ItemCard({title}) {
 
 const useStyles = makeStyles({  
   card:{
-    color: 'green'
-  }
+    color: 'green',
+    fontSize: '1.1rem'
+  },
+  image:{
+    objectFit: 'contain'
+  },
 });

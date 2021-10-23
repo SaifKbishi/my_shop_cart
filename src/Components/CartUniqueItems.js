@@ -23,7 +23,7 @@ const mapStateToProps = (state)=>{
 
 const useStyles = makeStyles({
   speComponent:{
-    border: `2px solid red`,
+    // border: `2px solid red`,
     margin: '5px 10px',
   }
 });

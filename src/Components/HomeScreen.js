@@ -18,7 +18,7 @@ const HomeScreen = (props) => {
     <Router>
       <NavBar/>
       {/* <CartIcon/> */}
-      <CartUniqueItems/>
+      {/* <CartUniqueItems/> */}
       <Route path="/" exact component={ItemsScreen} />      
       <Route path="/allitems" component={ItemsScreen} />
       <Route path="/cart" component={CartScreen} />

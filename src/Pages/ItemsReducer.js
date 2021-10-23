@@ -1,24 +1,26 @@
 import {combineReducers} from 'redux';
+import data from '../Files/data';
 
 const INITIAL_STATE = {
   cart : [],
-  allItems : [
-    {id:1, name:'3-Piece Reversible Rustic Lodge Bedspread Quilt', price:25, quantity:1}, 
-    {id:2, name:'12x25 Compact Binoculars',price:20, quantity:1}, 
-    {id:3, name:'12x42 HD Binoculars for Adults with Universal Phone Adapter',price:30, quantity:1}, 
-    {id:4, name:'BalanceFrom GoYoga',price:50, quantity:1}, 
-    {id:1, name:'Bear Deer Elk Pillow', price:25, quantity:1}, 
-    {id:2, name:'Beek NOAA Emergency Radio',price:20, quantity:1}, 
-    {id:3, name:'GearLight LED Tactical Flashlight',price:30, quantity:1}, 
-    {id:4, name:'Hydration Backpack with 3L TPU Water Bladder',price:50, quantity:1}, 
-    {id:4, name:'Life Is Better At The Cabin',price:50, quantity:1}, 
-    {id:4, name:'Lodge Bedspread King Size Quilt',price:50, quantity:1}, 
-    {id:4, name:'Perfotek Waist Trimmer Belt',price:50, quantity:1}, 
-    {id:4, name:'Portable Folding Rocking Chair',price:50, quantity:1}, 
-    {id:4, name:'Quilt - Bear Lake',price:50, quantity:1}, 
-    {id:4, name:'Survival Gear and Equipment',price:50, quantity:1}, 
-    {id:4, name:'Twin Quilt - Moonlit Bear',price:50, quantity:1},    
-  ],
+  allItems : data.productsData,
+  // [
+  //   {id:1, name:'3-Piece Reversible Rustic Lodge Bedspread Quilt', price:25, quantity:1}, 
+  //   {id:2, name:'12x25 Compact Binoculars',price:20, quantity:1}, 
+  //   {id:3, name:'12x42 HD Binoculars for Adults with Universal Phone Adapter',price:30, quantity:1}, 
+  //   {id:4, name:'BalanceFrom GoYoga',price:50, quantity:1}, 
+  //   {id:1, name:'Bear Deer Elk Pillow', price:25, quantity:1}, 
+  //   {id:2, name:'Beek NOAA Emergency Radio',price:20, quantity:1}, 
+  //   {id:3, name:'GearLight LED Tactical Flashlight',price:30, quantity:1}, 
+  //   {id:4, name:'Hydration Backpack with 3L TPU Water Bladder',price:50, quantity:1}, 
+  //   {id:4, name:'Life Is Better At The Cabin',price:50, quantity:1}, 
+  //   {id:4, name:'Lodge Bedspread King Size Quilt',price:50, quantity:1}, 
+  //   {id:4, name:'Perfotek Waist Trimmer Belt',price:50, quantity:1}, 
+  //   {id:4, name:'Portable Folding Rocking Chair',price:50, quantity:1}, 
+  //   {id:4, name:'Quilt - Bear Lake',price:50, quantity:1}, 
+  //   {id:4, name:'Survival Gear and Equipment',price:50, quantity:1}, 
+  //   {id:4, name:'Twin Quilt - Moonlit Bear',price:50, quantity:1},    
+  // ],
   totalPrice:0
 }
 

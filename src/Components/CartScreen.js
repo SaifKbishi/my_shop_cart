@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { Typography} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import ClearCart from './ClearCart';
+import CartUniqueItems from './CartUniqueItems';
 
 const CartScreen = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.speComponent}>
+    <CartUniqueItems/>
     <Typography variant="h4" gutterBottom>Items in the Cart</Typography>      
       {props.items.cart.map((item, index)=>{        
         return(
@@ -37,9 +39,9 @@ const useStyles = makeStyles({
     boxSizing: "border-box",
   },
   speComponent:{
-    border: `2px solid #FFF`,
+    // border: `2px solid #FFF`,
     margin: '5px 10px',
-    width: '450px'
+    // width: '450px'
   }
 });
 
