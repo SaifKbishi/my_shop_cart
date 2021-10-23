@@ -5,21 +5,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const CartIcon = (props) => {
-  // console.log('props: ', props)
-  const classes = useStyles();
  
   return (
-    // <div className={classes.speComponent}>
     <div >
       <Typography >
         {/* Total items in the Cart:  */}
         {props.items.cart.reduce((a, item)=>{
           return a + item.quantity
         },0)}
-      </Typography>      
-      {/* <Typography>
-        Total Price: {props.items.totalPrice} $
-      </Typography> */}
+      </Typography>
     </div>
   );
 };

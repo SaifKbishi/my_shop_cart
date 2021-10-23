@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addItem, removeItem} from '../Pages/ItemsActions'
+import { addItem, removeItem} from '../Pages/ItemsActions';
 import { Typography, Button, ButtonGroup} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
-import ItemCard from './ItemCard'
+import ItemCard from './ItemCard';
 
 const ItemsScreen = (props) => {
   const classes = useStyles();

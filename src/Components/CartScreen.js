@@ -4,6 +4,8 @@ import { Typography} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import ClearCart from './ClearCart';
 import CartUniqueItems from './CartUniqueItems';
+import ItemCard from './ItemCard';
+import InCartItemCard from './InCartItemCard';
 
 const CartScreen = (props) => {
   const classes = useStyles();
@@ -14,7 +16,11 @@ const CartScreen = (props) => {
       {props.items.cart.map((item, index)=>{        
         return(
           <div className={classes.itemsInCart} key={index}>
-          <Typography variant="h6" >{item.name} qty:{item.quantity}</Typography>
+          <InCartItemCard title={item.name} img={item.img}/>
+          {/* <ItemCard title={item.name} img={item.img}/> */}
+          {/* <Typography variant="h6" >{item.name} qty:{item.quantity}</Typography> */}
+          <Typography variant="h6" >qty:{item.quantity}</Typography>
+          
           </div>
         )
       })
@@ -32,11 +38,11 @@ const mapStateToProps = (state)=>{
 
 const useStyles = makeStyles({
   itemsInCart: {
-    width: '150px',
-    backgroundColor: "#44014C",
+    width: '350px',
     margin: '5px 10px',
     padding: '3px',
     boxSizing: "border-box",
+    display:'flex'
   },
   speComponent:{
     // border: `2px solid #FFF`,
