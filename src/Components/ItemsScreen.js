@@ -9,17 +9,10 @@ import ItemCard from './ItemCard';
 const ItemsScreen = (props) => {
   const classes = useStyles();
   return (
-    <div className={classes.speComponent}>
+    <div className={classes.speComponent} >
       {props.items.allItems.map((item, index)=>{
         return(
           <div className={classes.anItem} key={index}>
-          
-            {/* <div >
-            <Button key={index} style={{backgroundColor:'#333', margin:'3px'}} 
-              onClick={()=>{props.addItem(item)}}
-              >Add {item.name}</Button>
-            </div> */}
-
             <ItemCard title={item.name} img={item.img}/>
             <div className={classes.qtyBtns}>
               <Typography variant="p" display="inline">Price: {item.price} $</Typography> 
@@ -41,7 +34,6 @@ const ItemsScreen = (props) => {
   );
 };
 
-
 const mapStateToProps = (state)=>{
   const {items} = state
   return {items}
@@ -54,9 +46,8 @@ const mapDispatchToProps = (dispatch) =>(
 
 const useStyles = makeStyles({  
   speComponent:{
-    // border: `2px solid red`,
-    margin: '5px 10px',
-    // width: '450px',
+    margin: '105px 10px',
+    transition: '0.5s',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',

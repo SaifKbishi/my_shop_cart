@@ -17,25 +17,22 @@ const CartScreen = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.speComponent}>
-    <CartUniqueItems/>
     <Typography variant="h4" gutterBottom>Shopping Cart</Typography>
-    <Typography variant="h4" gutterBottom className={classes.cartSum}>
+    <Typography gutterBottom className={classes.cartSum}>
       <ClearCart/>
       <div className={classes.subTotal}>
-      Subtotal ( {<CartIcon /> }  items): 
-      {props.items.totalPrice} $
+        Subtotal ( {<CartIcon /> }  items):  
+        {props.items.totalPrice} $
       </div>
     </Typography>
     
-      {props.items.cart.map((item, index)=>{  
-        console.log(props.items.totalPrice)      
+      {props.items.cart.map((item, index)=>{
         return(
           <div className={classes.itemsInCart} key={index}>
             <InCartItemCard title={item.name} img={item.img} />
-            {/* <ItemCard title={item.name} img={item.img}/> */}
             <div className={classes.inCartControls}>
               <Typography variant="p" display="inline">Quantity: {item.quantity} </Typography>
-              <Typography variant="p" display="inline">Price: {item.quantity * item.price} $</Typography> 
+              <Typography variant="p" display="inline">Price: {item.quantity * item.price}$</Typography> 
                 <div className={classes.qtyBtns}>
                   <IconButton
                     size="large"
@@ -44,7 +41,7 @@ const CartScreen = (props) => {
                     aria-haspopup="true"
                     onClick={()=>{props.removeItem(item)}}
                     color="inherit"
-                    flexGrow='1'
+                    flexgrow='1'
                   >
                   -
                   </IconButton>
@@ -55,7 +52,7 @@ const CartScreen = (props) => {
                     aria-haspopup="true"
                     onClick={()=>{props.addItem(item)}}
                     color="inherit"
-                    flexGrow='1'
+                    flexgrow='1'
                   >
                   +
                   </IconButton>
@@ -88,7 +85,7 @@ const useStyles = makeStyles({
     display:'flex'
   },
   speComponent:{
-    margin: '5px 10px',
+    margin: '105px 10px',
   },
   basketCard:{
     display:'flex'
@@ -96,7 +93,8 @@ const useStyles = makeStyles({
   inCartControls:{
     display:'flex',
     flexDirection:'column',
-    justifyContent:'center'
+    justifyContent:'center',
+    padding: '10px',
   },
   qtyBtns:{
     display:'flex',
@@ -104,12 +102,11 @@ const useStyles = makeStyles({
   },
   subTotal:{
     display:'flex',
-    
+    fontSize: '20px', 
   },
   cartSum:{
     display: 'flex',
-    justifyContent: 'space-between',
-    fontSize: '20px'
+    justifyContent: 'space-between',    
   }
 });
 

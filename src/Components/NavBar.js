@@ -33,8 +33,8 @@ const NavBar = (props)=> {
 
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexgrow: 1 }}>
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="large"
@@ -60,12 +60,12 @@ const NavBar = (props)=> {
             color="inherit"
           >
          <IconButton
-            size="large"
             aria-label="account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={()=>history.push('/cart')}
             color="inherit"
+            className={classes.cartIconQty}
           >
           <ShoppingCartRoundedIcon/>
           <CartIcon className={classes.itemInCart}/>
@@ -125,7 +125,11 @@ const useStyles = makeStyles({
     fontSize: '7px',
     position: 'relative',
     top: '-14px',
-    left:'19px'
+    left: '19px'
+  },
+  cartIconQty:{
+    display: 'flex',
+    flexDirection: 'column-reverse'
   }
 });
 

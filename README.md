@@ -1,4 +1,4 @@
-# implementing Redux to demonstrate a Shopping Cart
+# Shopping Cart with Redux
 
 Using material-UI library to create a user interface for react app
 
