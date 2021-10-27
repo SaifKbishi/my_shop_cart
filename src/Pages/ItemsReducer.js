@@ -36,7 +36,6 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
         totalPrice: state.totalPrice - action.payload.price,
       }
     }else if(removedItem && removedItem.quantity === 1){
-      console.log('49: ', removedItem)
       return{
         ...state,
         cart: state.cart.filter(cartItem => cartItem.name !== removedItem.name),
@@ -44,7 +43,6 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
       }
     }
     else if(removedItem && removedItem.quantity === 0){
-      console.log('49: ', removedItem)
       return{
         ...state,
         cart: state.cart.filter(cartItem => cartItem.name !== removedItem.name),
