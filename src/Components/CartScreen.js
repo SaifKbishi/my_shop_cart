@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addItem, removeItem} from '../Pages/ItemsActions';
-import { Typography, ButtonGroup, Button} from '@mui/material/';
+import { Typography} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@mui/material/IconButton';
 import ClearCart from './ClearCart';
@@ -11,7 +11,6 @@ import ItemCard from './ItemCard';
 import CartIcon from './CartIcon'
 import InCartItemCard from './InCartItemCard';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const CartScreen = (props) => {
   const classes = useStyles();
@@ -24,6 +23,9 @@ const CartScreen = (props) => {
         Subtotal ( {<CartIcon /> }  items):  
         {props.items.totalPrice} $
       </div>
+    </Typography>
+    <Typography className={classes.cs_unqitms}>
+      <CartUniqueItems />
     </Typography>
     
       {props.items.cart.map((item, index)=>{
@@ -86,6 +88,8 @@ const useStyles = makeStyles({
   },
   speComponent:{
     margin: '105px 10px',
+    display: 'flex',
+    flexDirection: 'column'
   },
   basketCard:{
     display:'flex'
@@ -107,7 +111,11 @@ const useStyles = makeStyles({
   cartSum:{
     display: 'flex',
     justifyContent: 'space-between',    
-  }
+  },
+  cs_unqitms:{
+    alignSelf:'flex-end',
+
+  } 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartScreen);

@@ -5,6 +5,7 @@ import { addItem, removeItem} from '../Pages/ItemsActions';
 import { Typography, Button, ButtonGroup} from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import ItemCard from './ItemCard';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ItemsScreen = (props) => {
   const classes = useStyles();
@@ -17,14 +18,17 @@ const ItemsScreen = (props) => {
             <div className={classes.qtyBtns}>
               <Typography variant="p" display="inline">Price: {item.price} $</Typography> 
               <ButtonGroup variant="outlined" aria-label="text button group" key={index+item}>            
-              <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
+              {/* <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
                 onClick={()=>{props.removeItem(item)}}
                 key={index+item}
-                >-</Button>
+                >-</Button> */}
               <Button style={{backgroundColor:'#333', margin:'3px 0px'}} 
                 onClick={()=>{props.addItem(item)}}
                 key={index+item+item}
-                >+</Button>            
+                >
+                {/* + */}
+                <AddShoppingCartIcon/>
+                </Button>            
               </ButtonGroup>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -19,10 +18,17 @@ const classes = useStyles();
         alt={title}        
         sx={{objectFit: 'contain', maxWidth:'200px'}}
       />
-      <CardHeader  
-        title={title}
-        sx={{fontSize : '1.1rem', height: '70px', width:'750px'}}
-      />
+      <div>
+        <CardHeader  
+          title={title}
+          sx={{fontSize : '1.1rem', height: '70px', width:'750px', padding:'3px 16px'}}
+        />
+        <CardContent sx={{padding:'3px 16px'}}>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Word of the Day
+          </Typography>
+        </CardContent>
+      </div>
     </Card>
   );
 }

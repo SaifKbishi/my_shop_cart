@@ -46,9 +46,10 @@ const NavBar = (props)=> {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/" className="nav-link" className={classes.menuLink}>Home</Link>
-            <Link to="/allitems" className="nav-link" className={classes.menuLink}>All Items</Link>
-            <Link to="/cart" className="nav-link" className={classes.menuLink}>Cart</Link>
+            {/* <Link to="/" className="nav-link" className={classes.menuLink}>Home</Link> */}
+            <Link to="/" className={classes.menuLink}>Home</Link>
+            <Link to="/allitems" className={classes.menuLink}>All Items</Link>
+            <Link to="/cart"  className={classes.menuLink}>Cart</Link>
           </Typography>
 
           <IconButton
