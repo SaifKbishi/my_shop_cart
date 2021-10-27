@@ -13,22 +13,18 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
     case 'ADD_ITEM':
     const inCartItem = state.cart.find(item => item.name === action.payload.name);
     const addedItem = state.allItems.find(item => item.name === action.payload.name);
-    if(inCartItem){ //if itme found in cart
+    if(inCartItem) //if itme found in cart
       return{        //should update the counter
           ...state,
           cart: state.cart.map(item => item.name === inCartItem.name ? {...inCartItem, quantity:inCartItem.quantity +1} : item),
           totalPrice: state.totalPrice + action.payload.price,
-        }        
-        break;
-      }
-      else{
+        }      
+      else
         return {        
           ...state,
           cart:[...state.cart, addedItem],
           totalPrice: state.totalPrice + action.payload.price,
-        }        
-        break;
-      }
+        }      
     break;    
 
     case 'REMOVE_ITEM':
@@ -39,7 +35,6 @@ const itemsReducer = (state=INITIAL_STATE, action)=>{
         cart: state.cart.map(item => item.name === removedItem.name ? {...removedItem, quantity: removedItem.quantity -1} : item),
         totalPrice: state.totalPrice - action.payload.price,
       }
-      break;
     }else if(removedItem && removedItem.quantity === 1){
       console.log('49: ', removedItem)
       return{
